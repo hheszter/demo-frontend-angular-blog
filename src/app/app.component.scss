@@ -1,0 +1,69 @@
+@use 'sass:map';
+@use 'sass:color';
+
+@use '../assets/colors' as c;
+
+header {
+    width: 100%;
+    min-height: 120px;
+    background: map.get(c.$colors, dark);
+    color: map.get(c.$colors, light);
+
+    @media only screen and (min-width:768px){
+        min-height: 80px;
+        display: flex;
+        align-items: baseline;
+    }
+
+    h1 {
+        color: map.get(c.$colors, orangecolor);
+    }
+}
+
+.main {
+    
+    display: flex;
+    flex-direction: column;
+
+    @media only screen and (min-width:992px){
+        flex-direction: row;
+    }
+
+    &-content {
+        width: 100%;
+
+        @media only screen and (min-width: 992px){
+            min-width: 66%;
+        }
+    }
+
+    aside {
+        display: flex;
+        flex-direction: column;
+
+        @media only screen and (min-width:768px){
+            flex-direction: row;
+        }
+
+        @media only screen and (min-width:992px){
+            flex-direction: column;
+            width: 30%;
+        }
+        .ads {
+            border: 2px solid map.get(c.$colors, orangecolor);
+            min-height: 200px;
+            min-width: 33%;
+        }
+    }
+}
+
+footer {
+    margin-top: auto;
+    min-height: 120px;
+     
+    background: color.scale(map.get(c.$colors, dark), $lightness: 60%);
+
+    section {
+        text-align: center;
+    }
+}

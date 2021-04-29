@@ -1,0 +1,31 @@
+@use 'sass:map';
+
+@use '../../../assets/colors' as c;
+
+nav {
+    width: 100%;
+
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: flex-start;
+
+        li {
+            min-width: 100px;
+            width: fit-content;
+            padding: 0.5rem;
+            margin-right: 1rem;
+            text-align: center;
+
+            &:hover {
+                box-shadow: 0 0 2px map.get(c.$colors, light);
+            }
+
+            a[routerLink] {
+                text-decoration: none;
+                color: map.get(c.$colors, light);
+                
+            }
+        }
+    }
+}
